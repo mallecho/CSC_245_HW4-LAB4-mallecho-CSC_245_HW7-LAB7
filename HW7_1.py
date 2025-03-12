@@ -6,6 +6,38 @@ rainfall = np.random.gamma(shape=2.0, scale=2.0, size=365)  # Synthetic daily ra
 
 rainfall[np.random.choice(365, 100, replace=False)] = 0  # 100 dry days
 
+#Boolean Masks: Generate 100 random numbers, find numbers divisible by 3, and replace them with -1.
+# Generate 100 random numbers
+random_numbers = np.random.randint(1, 100, 100)
+
+# Find numbers divisible by 3 and replace them with -1
+mask = (random_numbers % 3 == 0)
+random_numbers[mask] = -1
+
+print('Random numbers after applying Boolean mask and replacement:')
+print(random_numbers)
+
+#Fancy Indexing: Extract every alternate row from a 5×5 matrix.
+# Create a 5x5 matrix
+matrix = np.arange(25).reshape(5, 5)
+
+# Extract every alternate row
+alternate_rows = matrix[::2, :]
+
+print('Every alternate row from the 5x5 matrix:')
+print(alternate_rows)
+
+#Sorting: Generate a 10×10 matrix and sort by first column.
+# Generate a 10x10 matrix
+matrix_10x10 = np.random.randint(1, 100, (10, 10))
+
+# Sort by the first column
+sorted_matrix = matrix_10x10[matrix_10x10[:, 0].argsort()]
+
+print('10x10 matrix sorted by the first column:')
+print(sorted_matrix)
+
+print()
 #1. Boolean Arrays & Masks
 print(f'Using Boolean arrays & Masks:'   )
 print()
